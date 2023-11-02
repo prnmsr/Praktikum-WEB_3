@@ -1,23 +1,21 @@
-<?php
-function infoLogin() {
+<?php function infoLogin()
+{
     $ci = get_instance();
     return $ci->db->get_where('tb_user', ['username' => $ci->session->userdata('username')])->row_array();
 }
-
-function cekLogin() {
+function cek_login()
+{
     $ci = get_instance();
     if (!$ci->session->userdata('username')) {
         redirect('login');
     }
 }
-
-function cekUser() {
+function cek_user()
+{
     $ci = get_instance();
     $user = $ci->db->get_where('tb_user', ['username' => $ci->session->userdata('username')])->row_array();
-    if ($user['role'] == 'login') {
-        // Apa yang ingin Anda lakukan jika role adalah 'login'?
+    if ($user['role'] == 'admin') {
     } else {
         redirect('login/block');
     }
 }
-?>
