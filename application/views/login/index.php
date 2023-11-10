@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +11,6 @@
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <link href="<?= base_url('assets/css/styles.css') ?>" rel="stylesheet" />
 </head>
-
 <body class="bg-primary">
     <div id="layoutAuthentication">
         <div id="layoutAuthentication_content">

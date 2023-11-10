@@ -1,7 +1,6 @@
 <?php
-defined('BASEPATH') or exit('No direct script acces allowed');
-
-class login extends CI_Controller
+defined('BASEPATH') or exit('No direct script access allowed');
+class Login extends CI_Controller
 {
     public function __construct()
     {
@@ -36,9 +35,11 @@ class login extends CI_Controller
                 $this->session->set_userdata($data);
 
                 if ($user['role'] == 'admin') {
-                    redirect('menu');
-                } else {
-                    redirect('welcome');
+                    $this->_updateLastLogin($userid);
+                    redirect('admin/menu');
+                } else if ($user['role'] == 'sekretaris'){
+                    $this->_updateLastLogin($userid);
+                    redirect('surat');
                 }
             } else {
                 redirect('/');

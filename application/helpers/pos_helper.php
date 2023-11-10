@@ -1,5 +1,5 @@
-<?php function infoLogin()
-{
+<?php 
+function infoLogin(){
     $ci = get_instance();
     return $ci->db->get_where('tb_user', ['username' => $ci->session->userdata('username')])->row_array();
 }
